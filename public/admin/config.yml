@@ -8,13 +8,12 @@ backend:
   repo: ermastuff/edprint          # <-- il tuo repo
   branch: main
   # Origine che ospita la funzione OAuth (le API su Vercel di questo stesso sito).
-  # SOSTITUISCI con il dominio Vercel del sito, es. https://edprint.vercel.app
-  base_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
+  base_url: https://edprint.vercel.app
   auth_endpoint: api/auth
 
 # Messaggio di commit quando il cliente salva
-site_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
-display_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
+site_url: https://edprint.vercel.app
+display_url: https://edprint.vercel.app
 
 # Dove finiscono le immagini caricate dal cliente
 media_folder: "public/uploads"

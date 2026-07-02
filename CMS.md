@@ -4,7 +4,7 @@ La galleria della pagina **Stampa** è ora *data-driven*: i prodotti e le immagi
 vivono in `content/products/*.json` e il cliente li modifica da un pannello web,
 senza toccare il codice.
 
-- **Pannello:** `https://TUO-DOMINIO.vercel.app/admin`
+- **Pannello:** `https://edprint.vercel.app/admin`
 - **CMS:** [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (Git-based, salva su GitHub)
 - **Hosting:** Vercel (deploy automatico ad ogni salvataggio)
 - **Login cliente:** GitHub OAuth
@@ -23,8 +23,8 @@ senza toccare il codice.
 ### 1. Crea una GitHub OAuth App
 GitHub → *Settings* → *Developer settings* → *OAuth Apps* → **New OAuth App**
 - **Application name:** EDPRINT CMS
-- **Homepage URL:** `https://TUO-DOMINIO.vercel.app`
-- **Authorization callback URL:** `https://TUO-DOMINIO.vercel.app/api/callback`
+- **Homepage URL:** `https://edprint.vercel.app`
+- **Authorization callback URL:** `https://edprint.vercel.app/api/callback`
 
 Prendi nota di **Client ID** e genera un **Client Secret**.
 
@@ -36,8 +36,8 @@ Progetto su Vercel → *Settings* → *Environment Variables*:
 Poi fai un **Redeploy** perché le variabili vengano lette dalle funzioni `api/`.
 
 ### 3. Aggiorna `public/admin/config.yml`
-Sostituisci `https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app` con il dominio reale
-nei campi `base_url`, `site_url`, `display_url`. Verifica che `repo:` sia corretto.
+Già impostato su `https://edprint.vercel.app` (`base_url`, `site_url`, `display_url`).
+Se in futuro cambi dominio, aggiorna qui e nella OAuth App (passo 1), poi ridistribuisci.
 
 ### 4. Dai accesso al cliente
 Il cliente deve poter scrivere sul repo:
