@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDPRINT — Stampa, decorazioni e allestimenti</title>
+  <meta name="description" content="EDPRINT: stampa, decorazioni ed allestimenti, strutture espositive e gadget. Diamo forma alle idee dei tuoi progetti, dalla stampa al montaggio." />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/myg7hud.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- Logo: fisso, al vivo dell'angolo in alto a sinistra, sopra a tutto -->
+  <a href="#top" class="logo" aria-label="EDPRINT home">
+    <span class="logo__mark" aria-hidden="true">
+      <i class="c"></i><i class="m"></i><i class="y"></i><i class="k"></i>
+    </span>
+    <span class="logo__word">EDPRINT<em>.</em></span>
+  </a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+
+      <!-- Fascia arancione con i trigger: dal bordo sinistro fino a --drawer-w -->
+      <nav class="nav__menu" aria-label="Menu principale">
+        <button class="nav__link nav__trigger" data-menu="servizi" aria-expanded="false" aria-controls="panel-servizi">
+          <span class="nav__label" data-text="Servizi">Servizi</span>
+          <span class="nav__plus" aria-hidden="true"></span>
+        </button>
+        <button class="nav__link nav__trigger" data-menu="settori" aria-expanded="false" aria-controls="panel-settori">
+          <span class="nav__label" data-text="Settori">Settori</span>
+          <span class="nav__plus" aria-hidden="true"></span>
+        </button>
+      </nav>
+
+      <!-- Voci di destra -->
+      <nav class="nav__right" aria-label="Menu secondario">
+        <a class="nav__link" href="#cataloghi"><span class="nav__label" data-text="Cataloghi">Cataloghi</span></a>
+        <a class="nav__link" href="#contatti"><span class="nav__label" data-text="Contatti">Contatti</span></a>
+        <a class="nav__link" href="#chi-siamo"><span class="nav__label" data-text="Chi siamo">Chi siamo</span></a>
+        <a class="nav__link nav__cta" href="#preventivo"><span class="nav__label" data-text="Richiedi preventivo">Richiedi preventivo</span></a>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button class="nav__burger" id="burger" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Overlay behind open drawers -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <!-- ===================== PANNELLI MENU (arancioni) ===================== -->
+  <aside class="drawer" id="panel-servizi" data-panel="servizi" aria-hidden="true">
+    <div class="drawer__bar">
+      <span class="drawer__title">Servizi</span>
+      <button class="drawer__x" data-close aria-label="Chiudi">
+        <span class="nav__plus" aria-hidden="true"></span>
+      </button>
+    </div>
+    <ul class="drawer__list">
+      <li><a href="#stampa"><span class="drawer__label" data-text="Stampa">Stampa</span><span class="drawer__idx">01</span></a></li>
+      <li><a href="#decorazioni"><span class="drawer__label" data-text="Decorazioni ed allestimenti">Decorazioni ed allestimenti</span><span class="drawer__idx">02</span></a></li>
+      <li><a href="#strutture"><span class="drawer__label" data-text="Strutture espositive">Strutture espositive</span><span class="drawer__idx">03</span></a></li>
+      <li><a href="#gadget"><span class="drawer__label" data-text="Gadget e merchandising">Gadget e merchandising</span><span class="drawer__idx">04</span></a></li>
+    </ul>
+  </aside>
+
+  <aside class="drawer" id="panel-settori" data-panel="settori" aria-hidden="true">
+    <div class="drawer__bar">
+      <span class="drawer__title">Settori</span>
+      <button class="drawer__x" data-close aria-label="Chiudi">
+        <span class="nav__plus" aria-hidden="true"></span>
+      </button>
+    </div>
+    <ul class="drawer__list">
+      <li><a href="#settori"><span class="drawer__label" data-text="Aziende, PMI">Aziende, PMI</span><span class="drawer__idx">01</span></a></li>
+      <li><a href="#settori"><span class="drawer__label" data-text="PA, Scuole, Associazioni">PA, Scuole, Associazioni</span><span class="drawer__idx">02</span></a></li>
+      <li><a href="#settori"><span class="drawer__label" data-text="Horeca, Negozi, Attività locali">Horeca, Negozi, Attività locali</span><span class="drawer__idx">03</span></a></li>
+      <li><a href="#settori"><span class="drawer__label" data-text="Studi professionali, specialistici">Studi professionali, specialistici</span><span class="drawer__idx">04</span></a></li>
+    </ul>
+  </aside>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+
+      <!-- banda media: liquido CMYK (Three.js) -->
+      <div class="hero__media">
+        <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="halftone" aria-hidden="true"></div>
+      </div>
+
+      <!-- metà inferiore bianca: testo -->
+      <div class="hero__lower">
+        <!-- riga testo: descrizione in alto a sinistra, titolone in basso a destra -->
+        <div class="hero__row">
+          <div class="hero__left">
+            <p class="hero__desc">Come diamo forma alla tua comunicazione: stampa, decorazioni, allestimenti e gadget.</p>
+            <div class="hero__meta">
+              <a href="#preventivo" class="btn btn--dark">Richiedi preventivo</a>
+              <a href="#cataloghi" class="btn btn--ghost">Sfoglia i cataloghi</a>
+            </div>
+          </div>
+          <h1 class="hero__title">Stampiamo per<br /><em>passione</em></h1>
+        </div>
+
+        <!-- barra inferiore -->
+        <div class="hero__bottom">
+          <span class="mono">Stampa · Decorazioni · Allestimenti · Gadget</span>
+          <span class="mono hero__scroll">Scorri per esplorare</span>
+          <span class="mono hero__arrow" aria-hidden="true">↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT + CARD (rise on scroll) ============ -->
+    <div class="print-reveal">
+      <section class="statement">
+        <p class="statement__text">EDPRINT è il partner unico per la comunicazione visiva: progettiamo, stampiamo e allestiamo. Dal biglietto da visita al grande formato, dalla vetrina allo stand fieristico, seguiamo ogni progetto dal file finito al montaggio.</p>
+      </section>
+
+      <!-- spazio di scroll: lo statement resta bloccato e le lettere si riempiono -->
+      <div class="print-reveal__spacer" aria-hidden="true"></div>
+
+      <!-- schede che salgono e si impilano sopra lo statement sticky -->
+
+      <!-- 1) STAMPA — ciano -->
+      <section class="chapter chapter--stampa" aria-label="Servizio: Stampa">
+        <h2 class="chapter__title">Stampa</h2>
+        <div class="chapter__intro">
+          <h3 class="chapter__subtitle">Qualità di stampa, su misura.</h3>
+          <p class="chapter__para">Dalla piccola tiratura al grande formato gestiamo colore, supporti e finiture con controllo costante. Prove colore, nobilitazioni e tempi certi: ogni stampato esce pronto, coerente con il tuo progetto e con la tua immagine.</p>
+        </div>
+        <div class="chapter__media">
+          <canvas class="chapter__canvas" id="liquid-stampa" aria-hidden="true"></canvas>
+        </div>
+        <div class="chapter__right">
+          <p class="mono chapter__eyebrow">In questo servizio</p>
+          <ul class="chapter__list">
+            <li>Stampati commerciali</li>
+            <li>Brochure, Cataloghi e libri</li>
+            <li>Stampe promozionali</li>
+            <li>Packaging, Etichette e sticker</li>
+            <li>Manifesti, Poster e striscioni</li>
+            <li>Adesivi e materiali rigidi</li>
+          </ul>
+          <a class="chapter__cta" href="#stampa">
+            <span class="chapter__cta-txt" data-text="Esplora i prodotti stampati">Esplora i prodotti stampati</span>
+            <span class="chapter__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 2) DECORAZIONI E ALLESTIMENTI — magenta -->
+      <section class="chapter chapter--decorazioni" aria-label="Servizio: Decorazioni e allestimenti">
+        <h2 class="chapter__title">Decorazioni</h2>
+        <div class="chapter__intro">
+          <h3 class="chapter__subtitle">Spazi che parlano del tuo brand.</h3>
+          <p class="chapter__para">Vetrine, mezzi, interni e insegne: trasformiamo superfici e ambienti in comunicazione. Progettazione, produzione e posa in opera, per un risultato coerente dentro e fuori dallo spazio.</p>
+        </div>
+        <div class="chapter__media">
+          <canvas class="chapter__canvas" id="liquid-decorazioni" aria-hidden="true"></canvas>
+        </div>
+        <div class="chapter__right">
+          <p class="mono chapter__eyebrow">In questo servizio</p>
+          <ul class="chapter__list">
+            <li>Decorazione vetrine</li>
+            <li>Decorazione automezzi</li>
+            <li>Interior design</li>
+            <li>Insegne e totem</li>
+          </ul>
+          <a class="chapter__cta" href="#decorazioni">
+            <span class="chapter__cta-txt" data-text="Esplora decorazioni e allestimenti">Esplora decorazioni e allestimenti</span>
+            <span class="chapter__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3) STRUTTURE ESPOSITIVE — giallo -->
+      <section class="chapter chapter--strutture" aria-label="Servizio: Strutture espositive">
+        <h2 class="chapter__title">Strutture</h2>
+        <div class="chapter__intro">
+          <h3 class="chapter__subtitle">Presenza che si monta in un attimo.</h3>
+          <p class="chapter__para">Fondali, desk, totem e allestimenti per fiere, eventi e punto vendita. Sistemi modulari, leggeri e riutilizzabili, pronti a rappresentarti ovunque con il massimo impatto.</p>
+        </div>
+        <div class="chapter__media">
+          <canvas class="chapter__canvas" id="liquid-strutture" aria-hidden="true"></canvas>
+        </div>
+        <div class="chapter__right">
+          <p class="mono chapter__eyebrow">In questo servizio</p>
+          <ul class="chapter__list">
+            <li>Fondali, rollup e totem</li>
+            <li>Desk e postazioni</li>
+            <li>Strutture per punto vendita e showroom</li>
+          </ul>
+          <a class="chapter__cta" href="#strutture">
+            <span class="chapter__cta-txt" data-text="Esplora le strutture espositive">Esplora le strutture espositive</span>
+            <span class="chapter__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 4) GADGET E MERCHANDISING — nero -->
+      <section class="chapter chapter--gadget" aria-label="Servizio: Gadget e merchandising">
+        <h2 class="chapter__title">Gadget</h2>
+        <div class="chapter__intro">
+          <h3 class="chapter__subtitle">Il tuo brand, tra le mani giuste.</h3>
+          <p class="chapter__para">Gadget, kit personalizzati e premiazioni pensati per farsi ricordare. Selezione, personalizzazione e produzione, dal singolo omaggio alla fornitura completa per l'evento.</p>
+        </div>
+        <div class="chapter__media">
+          <canvas class="chapter__canvas" id="liquid-gadget" aria-hidden="true"></canvas>
+        </div>
+        <div class="chapter__right">
+          <p class="mono chapter__eyebrow">In questo servizio</p>
+          <ul class="chapter__list">
+            <li>Gadget per eventi e fiere</li>
+            <li>Kit personalizzati</li>
+            <li>Premiazioni</li>
+          </ul>
+          <a class="chapter__cta" href="#gadget">
+            <span class="chapter__cta-txt" data-text="Esplora gadget e merchandising">Esplora gadget e merchandising</span>
+            <span class="chapter__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== SETTORI ===================== -->
+    <section class="pillars" id="settori">
+        <div class="pillars__intro">
+          <div class="pillars__lead">
+            <p class="pillars__statement">Lavoriamo con realtà molto diverse: dall'azienda strutturata alla piccola attività di quartiere, dalla scuola all'ente pubblico. Adattiamo materiali, formati e tempi a ogni contesto.</p>
+            <p class="pillars__note">Un unico interlocutore per la comunicazione visiva di ogni settore, dal file finito al montaggio.</p>
+          </div>
+          <a class="pillars__contact" href="#preventivo">Richiedi un preventivo →</a>
+        </div>
+
+        <p class="pillars__label">I nostri settori ↓</p>
+
+        <div class="pillars__grid">
+          <article class="pillar reveal">
+            <div class="pillar__img"><img src="https://picsum.photos/seed/edprint-aziende/720/900" alt="Aziende e PMI" loading="lazy" /></div>
+            <div class="pillar__foot">
+              <h3 class="pillar__title">Aziende, PMI</h3>
+              <p class="pillar__desc">Immagine coordinata e materiali per uffici e forza vendita.</p>
+              <div class="pillar__explore">
+                <p class="pillar__q">Come possiamo aiutarti a rafforzare la tua immagine aziendale?</p>
+                <a class="pillar__link" href="#preventivo"><span>Esplora</span><span class="pillar__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__img"><img src="https://picsum.photos/seed/edprint-pa/720/900" alt="PA, Scuole e Associazioni" loading="lazy" /></div>
+            <div class="pillar__foot">
+              <h3 class="pillar__title">PA, Scuole, Associazioni</h3>
+              <p class="pillar__desc">Segnaletica e materiali per la collettività e gli eventi pubblici.</p>
+              <div class="pillar__explore">
+                <p class="pillar__q">Come possiamo aiutarti a comunicare meglio con la collettività?</p>
+                <a class="pillar__link" href="#preventivo"><span>Esplora</span><span class="pillar__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__img"><img src="https://picsum.photos/seed/edprint-horeca/720/900" alt="Horeca, Negozi e Attività locali" loading="lazy" /></div>
+            <div class="pillar__foot">
+              <h3 class="pillar__title">Horeca, Negozi, Attività locali</h3>
+              <p class="pillar__desc">Menu, insegne e vetrine che accolgono i tuoi clienti.</p>
+              <div class="pillar__explore">
+                <p class="pillar__q">Come possiamo aiutarti a farti scegliere dai clienti?</p>
+                <a class="pillar__link" href="#preventivo"><span>Esplora</span><span class="pillar__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__img"><img src="https://picsum.photos/seed/edprint-studi/720/900" alt="Studi professionali e specialistici" loading="lazy" /></div>
+            <div class="pillar__foot">
+              <h3 class="pillar__title">Studi professionali, specialistici</h3>
+              <p class="pillar__desc">Targhe, segnaletica e stampati per studi e professionisti.</p>
+              <div class="pillar__explore">
+                <p class="pillar__q">Come possiamo aiutarti a valorizzare il tuo studio?</p>
+                <a class="pillar__link" href="#preventivo"><span>Esplora</span><span class="pillar__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+    </section>
+
+    <!-- ===================== CHI SIAMO ===================== -->
+    <section class="about" id="chi-siamo">
+      <p class="mono about__kicker reveal">Chi siamo</p>
+      <div class="about__body">
+        <figure class="about__media reveal">
+          <img src="https://picsum.photos/seed/edprint-team/1280/720" alt="Il team EDPRINT al lavoro" loading="lazy" />
+          <span class="about__play" aria-hidden="true"></span>
+        </figure>
+        <h2 class="about__title reveal">Un service di stampa che allestisce, non solo che stampa.</h2>
+        <p class="about__text reveal">EDPRINT nasce dall'idea che un progetto di comunicazione non finisca con il file esportato. Uniamo reparto grafico, stampa e squadra di allestimento per seguire ogni lavoro dall'inizio alla posa: un solo interlocutore, meno passaggi e un risultato coerente, dal colore stampato al montaggio in cantiere.</p>
+        <a class="about__cta reveal" href="#preventivo">
+          <span class="about__cta-txt" data-text="Lavoriamo insieme">Lavoriamo insieme</span>
+          <span class="about__cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contatti">
+
+    <!-- logo: solo il bottiglione, bianco, a sinistra a tutta altezza (esce ~1/3) -->
+    <svg class="footer__bottle" viewBox="0 0 300 960" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+      <rect x="122" y="26" width="56" height="66" rx="12" />
+      <rect x="128" y="92" width="44" height="20" rx="8" />
+      <path d="M130 112 C 130 210, 104 270, 88 360 C 66 490, 58 700, 150 880 C 242 700, 234 490, 212 360 C 196 270, 170 210, 170 112" />
+    </svg>
+
+    <div class="footer__stage">
+
+      <!-- BANDA 1: linea con illustrazioni appoggiate (centro + destra) -->
+      <div class="footer__band">
+        <span class="footer__seg" style="flex-grow:3"></span>
+        <svg class="footer__art footer__art--md" viewBox="0 0 260 210" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="34" y="16" width="192" height="26" rx="13" />
+          <line x1="46" y1="42" x2="46" y2="52" /><line x1="214" y1="42" x2="214" y2="52" />
+          <rect x="26" y="52" width="208" height="72" rx="8" />
+          <rect x="182" y="66" width="40" height="26" rx="4" />
+          <line x1="190" y1="76" x2="214" y2="76" /><line x1="190" y1="84" x2="206" y2="84" />
+          <line x1="42" y1="112" x2="150" y2="112" />
+          <path d="M60 124 C 58 150, 78 168, 120 180" /><path d="M96 124 C 96 150, 108 166, 140 178" />
+          <line x1="56" y1="124" x2="56" y2="196" /><line x1="204" y1="124" x2="204" y2="196" />
+          <line x1="42" y1="196" x2="70" y2="196" /><line x1="190" y1="196" x2="218" y2="196" />
+        </svg>
+        <span class="footer__seg" style="flex-grow:4"></span>
+        <svg class="footer__art footer__art--tall" viewBox="0 0 120 300" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="28" y="18" width="64" height="250" rx="6" />
+          <rect x="42" y="32" width="36" height="26" rx="3" />
+          <line x1="42" y1="78" x2="78" y2="78" />
+          <circle cx="60" cy="106" r="9" />
+          <line x1="28" y1="152" x2="92" y2="152" /><line x1="28" y1="210" x2="92" y2="210" />
+          <line x1="46" y1="268" x2="46" y2="292" /><line x1="74" y1="268" x2="74" y2="292" />
+          <line x1="38" y1="292" x2="54" y2="292" /><line x1="66" y1="292" x2="82" y2="292" />
+        </svg>
+        <span class="footer__seg" style="flex-grow:0.3"></span>
+      </div>
+
+      <!-- indirizzi tra le due linee -->
+      <div class="footer__cols">
+        <div class="footer__block footer__reveal">
+          <h3 class="footer__h">Sede</h3>
+          <p>Via della Stampa 12<br />00000 Città (IT)<br />+39 000 000 0000<br />info@edprint.it</p>
+        </div>
+        <div class="footer__block footer__reveal">
+          <h3 class="footer__h">Produzione</h3>
+          <p>Zona Industriale, Lotto 8<br />00000 Città (IT)<br />produzione@edprint.it</p>
+        </div>
+        <div class="footer__block footer__reveal">
+          <h3 class="footer__h">Commerciale</h3>
+          <p>Preventivi e progetti<br />commerciale@edprint.it<br />+39 000 000 0001</p>
+        </div>
+      </div>
+
+      <!-- BANDA 2: linea con illustrazioni appoggiate (sinistra + destra) -->
+      <div class="footer__band">
+        <span class="footer__seg" style="flex-grow:0.4"></span>
+        <svg class="footer__art footer__art--md" viewBox="0 0 240 210" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="24" y="30" width="192" height="120" rx="10" />
+          <circle cx="78" cy="78" r="26" /><circle cx="150" cy="78" r="26" /><circle cx="114" cy="126" r="18" />
+          <circle cx="78" cy="78" r="3" /><circle cx="150" cy="78" r="3" /><circle cx="114" cy="126" r="3" />
+          <path d="M24 56 C 54 56, 52 96, 114 108 C 176 96, 174 56, 216 56" />
+          <line x1="60" y1="150" x2="60" y2="196" /><line x1="180" y1="150" x2="180" y2="196" />
+          <line x1="46" y1="196" x2="74" y2="196" /><line x1="166" y1="196" x2="194" y2="196" />
+        </svg>
+        <span class="footer__seg" style="flex-grow:7"></span>
+        <svg class="footer__art footer__art--md" viewBox="0 0 220 190" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="24" y="92" width="172" height="58" rx="6" />
+          <line x1="44" y1="150" x2="44" y2="176" /><line x1="176" y1="150" x2="176" y2="176" />
+          <rect x="46" y="98" width="118" height="14" />
+          <line x1="34" y1="92" x2="34" y2="34" />
+          <line x1="34" y1="34" x2="150" y2="62" />
+          <line x1="150" y1="62" x2="172" y2="54" />
+        </svg>
+        <span class="footer__seg" style="flex-grow:0.5"></span>
+      </div>
+
+      <!-- nav sotto la seconda linea -->
+      <nav class="footer__nav footer__reveal" aria-label="Link footer">
+        <a href="#top">Servizi</a>
+        <a href="#settori">Settori</a>
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#top">Cataloghi</a>
+        <span class="footer__nav-sec">
+          <a href="#top">Lavora con noi</a>
+          <a href="#top">Note legali</a>
+          <a href="#top">Privacy Policy</a>
+        </span>
+      </nav>
+
+      <!-- base: social a sinistra, Made by a destra -->
+      <div class="footer__base">
+        <div class="footer__social footer__reveal">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.97-1.8-2.97-1.8 0-2.08 1.4-2.08 2.87V21H9z" /></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.53-1.5H17V3.64c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.07v2.21H8v3.1h2.67V21z" /></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" /></svg>
+          </a>
+        </div>
+        <span class="footer__made footer__reveal">Made by Erma Studio</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
