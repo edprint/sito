@@ -1,0 +1,10 @@
+{
+  "title": "Biglietti da visita",
+  "order": 1,
+  "categoria": "stampa",
+  "settori": ["aziende", "studi"],
+  "formato": "verticale",
+  "hue": 12,
+  "descrizione": "Il biglietto da visita della tua attività: carte pregiate e finiture su misura.",
+  "images": []
+}

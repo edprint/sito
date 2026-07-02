@@ -1,0 +1,10 @@
+{
+  "title": "Cartelle porta documenti",
+  "order": 5,
+  "categoria": "stampa",
+  "settori": ["aziende", "studi"],
+  "formato": "verticale",
+  "hue": 145,
+  "descrizione": "Cartelle porta documenti per presentazioni e offerte curate nei dettagli.",
+  "images": []
+}

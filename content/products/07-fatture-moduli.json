@@ -1,0 +1,10 @@
+{
+  "title": "Fatture e moduli",
+  "order": 7,
+  "categoria": "stampa",
+  "settori": ["aziende", "studi"],
+  "formato": "quadrato",
+  "hue": 205,
+  "descrizione": "Fatture, moduli e ricevute stampati su misura per la tua gestione.",
+  "images": []
+}

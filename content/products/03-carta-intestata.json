@@ -1,0 +1,10 @@
+{
+  "title": "Carta intestata e fogli lettera",
+  "order": 3,
+  "categoria": "stampa",
+  "settori": ["aziende", "studi"],
+  "formato": "quadrato",
+  "hue": 32,
+  "descrizione": "Carta intestata e fogli lettera coordinati all'immagine aziendale.",
+  "images": []
+}

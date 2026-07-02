@@ -8,6 +8,7 @@
   --paper: #ffffff;
   --white: #ffffff;
   --accent: #ff5b2e;      /* arancio stampa */
+  --card-stampa: #a6dbe4; /* ciano pastello della card/pagina Stampa */
   --accent-ink: #111111;
   --purple: #cdabfe;
   --cyan: #12b0c9;
@@ -68,7 +69,6 @@ strong { font-weight: 700; }
   z-index: 100;
   height: var(--nav-h);
   background: var(--white);   /* bianco pieno, nessuna trasparenza */
-  border-bottom: 1px solid var(--line);
 }
 
 /* auto-hide del menu: sparisce verso l'alto scrollando giù, riappare scrollando su */
@@ -485,6 +485,318 @@ body.nav-hidden .logo {
 }
 
 /* ============================================================
+   HERO PAGINA SERVIZIO (phero): sopra testo su fondo card, sotto liquido
+   ============================================================ */
+.phero {
+  padding-top: var(--nav-h);
+  display: flex;
+  flex-direction: column;
+}
+.phero__top {
+  position: relative;
+  flex: none;
+  height: calc((100vh - var(--nav-h)) / 2);
+  height: calc((100dvh - var(--nav-h)) / 2);
+  background: var(--card-stampa); /* ciano pastello = colore card Stampa */
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--pad-x) clamp(20px, 4vh, 48px);
+}
+.phero__idx {
+  position: absolute;
+  top: clamp(24px, 7vh, 70px);
+  left: var(--pad-x);
+  color: rgba(17, 17, 17, 0.55);
+}
+.phero__title {
+  font-size: clamp(64px, 13vw, 200px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+.phero__meta {
+  position: absolute;
+  right: var(--pad-x);
+  bottom: clamp(20px, 4vh, 48px);
+  color: rgba(17, 17, 17, 0.55);
+}
+.phero__media {
+  position: relative;
+  flex: none;
+  height: calc((100vh - var(--nav-h)) / 2);
+  height: calc((100dvh - var(--nav-h)) / 2);
+  overflow: hidden;
+  background: #ffd6c9;           /* corallo fallback (negativo del ciano) */
+}
+.phero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* tema pagina Stampa: menu e pannelli del colore della card (non arancio) */
+.theme-stampa .nav__menu,
+.theme-stampa .drawer { background: var(--card-stampa); }
+
+/* ============================================================
+   PAGINA STAMPA — sezione contenuti (stampati commerciali)
+   ============================================================ */
+.n {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.svc {
+  padding-block: clamp(72px, 12vh, 160px) clamp(48px, 8vh, 110px);
+  display: grid;
+  grid-template-columns: 1fr;               /* mobile: colonna unica */
+  gap: 32px;
+}
+.svc__aside,
+.svc__main { padding-inline: var(--pad-x); } /* mobile */
+@media (min-width: 900px) {
+  /* split 45/55 = punto d'allineamento del menu (drawer-w) */
+  .svc {
+    grid-template-columns: var(--drawer-w) 1fr;
+    gap: 0;
+  }
+  .svc__aside { padding-inline: var(--pad-sub) 0; }
+  .svc__main  { padding-inline: 0 var(--pad-x); }
+  .svc__tag { position: sticky; top: calc(var(--nav-h) + 28px); }
+}
+.svc__tag { display: inline-block; color: var(--muted); }
+.svc__title {
+  font-size: clamp(40px, 6.4vw, 92px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  max-width: 14ch;
+  overflow: hidden;               /* mask per l'entrata delle lettere */
+}
+.svc__lead {
+  margin-top: clamp(22px, 3.5vh, 44px);
+  font-size: clamp(17px, 1.5vw, 23px);
+  line-height: 1.45;
+  max-width: 48ch;
+}
+.svc__block { margin-top: clamp(44px, 7vh, 96px); }
+.svc__h {
+  color: var(--muted);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.svc__prods {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  .svc__prods { grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 4vw, 64px); }
+}
+.svc__prods li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 15px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(16px, 1.35vw, 20px);
+}
+.svc__prods .n { min-width: 2.4ch; }
+
+/* ============================================================
+   PAGINA STAMPA — galleria (reveal a tendina)
+   ============================================================ */
+.gallery {
+  padding-block: clamp(40px, 7vh, 90px) clamp(90px, 14vh, 180px);
+  display: grid;
+  grid-template-columns: 1fr;               /* mobile: colonna unica */
+  gap: 32px;
+}
+.gallery__head,
+.gallery__grid { padding-inline: var(--pad-x); } /* mobile */
+.gallery__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.gallery__title {
+  font-size: clamp(28px, 2.6vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+@media (min-width: 900px) {
+  /* stesso split 45/55: testo a sinistra (sticky), tile a destra */
+  .gallery {
+    grid-template-columns: var(--drawer-w) 1fr;
+    gap: 0;
+  }
+  .gallery__head {
+    padding-inline: var(--pad-sub) 0;
+    position: sticky;
+    top: calc(var(--nav-h) + 28px);
+    align-self: start;
+  }
+  .gallery__grid { padding-inline: 0 var(--pad-x); }
+}
+/* la griglia vive nel 55% di destra: masonry a 2 colonne */
+.gallery__grid {
+  columns: 1;
+  column-gap: clamp(18px, 2vw, 26px);
+}
+@media (min-width: 620px) {
+  .gallery__grid { columns: 2; }
+}
+.ga {
+  margin: 0 0 clamp(18px, 2vw, 26px);
+  break-inside: avoid;
+}
+.ga__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-stampa);
+  aspect-ratio: 3 / 4;
+}
+.ga--wide .ga__frame { aspect-ratio: 4 / 3; }
+.ga--square .ga__frame { aspect-ratio: 1 / 1; }
+.ga--pano .ga__frame { aspect-ratio: 16 / 10; }
+/* carosello interno: track scorrevole con 3 slide */
+.ga__track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  will-change: transform, opacity;
+}
+.ga__slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  /* placeholder: 3 tonalità della stessa tinta (--h) per vedere il cambio */
+  background: linear-gradient(140deg,
+    hsl(var(--h, 12) 65% 76%), hsl(var(--h, 12) 58% 64%));
+}
+.ga__slide:nth-child(2) {
+  background: linear-gradient(140deg,
+    hsl(var(--h, 12) 55% 66%), hsl(var(--h, 12) 48% 52%));
+}
+.ga__slide:nth-child(3) {
+  background: linear-gradient(160deg,
+    hsl(var(--h, 12) 42% 34%), hsl(var(--h, 12) 46% 50%));
+}
+.ga__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ga__num {
+  font-size: clamp(40px, 6vw, 92px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.03em;
+}
+/* frecce di navigazione */
+.ga__arrow {
+  position: absolute;
+  bottom: 12px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.ga__arrow:hover { background: #fff; transform: scale(1.08); }
+.ga__arrow:active { transform: scale(0.96); }
+.ga__arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ga__next { right: 12px; }
+.ga__prev { left: 12px; }
+.ga__arrow[hidden] { display: none; }
+.ga__cover {
+  position: absolute;
+  inset: 0;
+  z-index: 3;                 /* sopra le frecce durante il reveal */
+  background: var(--card-stampa);
+  transform-origin: top center;
+  pointer-events: none;
+  will-change: transform;
+}
+.ga__cap {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  outline: none;
+}
+.ga__caphead {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  cursor: pointer;
+}
+.ga__caphead b {
+  color: var(--ink);
+  font-weight: 400;
+  transition: opacity 0.25s ease;
+}
+.ga__cap:hover .ga__caphead b,
+.ga__cap:focus-within .ga__caphead b { text-decoration: underline; text-underline-offset: 3px; }
+
+/* accordion: descrizione + tag rivelati in hover sul nome */
+.ga__desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.ga__cap:hover .ga__desc,
+.ga__cap:focus-within .ga__desc { grid-template-rows: 1fr; }
+.ga__descIn {
+  overflow: hidden;
+  min-height: 0;
+}
+.ga__descText {
+  padding-top: 10px;
+  max-width: 42ch;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.ga__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 10px;
+}
+.ga__tags li {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--muted);
+}
+
+/* guardie anti-flash quando il JS è attivo */
+.js .ga__cover { transform: scaleY(0); }
+.js .ga__track { opacity: 0; }
+.js .phero__title { clip-path: inset(0 0 100% 0); }
+
+/* ============================================================
    STATEMENT  (primo 45% vuoto, testo a destra in grigio chiaro)
    ============================================================ */
 .statement {
@@ -517,6 +829,15 @@ body.nav-hidden .logo {
   }
 }
 .char { display: inline-block; } /* per l'animazione lettera per lettera */
+/* la parola resta unita: l'a-capo avviene solo tra le parole, mai a metà */
+.word { display: inline-block; white-space: nowrap; }
+/* nessuna sillabazione né spezzatura delle parole nei titoli */
+.hero__title, .phero__title, .svc__title, .gallery__title,
+.chapter__title, .chapter__subtitle, .statement__text, .pillars__statement {
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+}
 
 /* ============================================================
    PRINT REVEAL — la card "Stampa" sale dal basso sopra lo statement
@@ -537,10 +858,10 @@ body.nav-hidden .logo {
   grid-template-rows: 1fr 1fr;
   overflow: hidden;
 }
-/* colori CMYK di ogni card */
-.chapter--stampa      { background: var(--cyan); }
-.chapter--decorazioni { background: var(--magenta); }
-.chapter--strutture   { background: var(--yellow); }
+/* colori CMYK di ogni card, in versione pastello (meno accentuata) */
+.chapter--stampa      { background: var(--card-stampa); } /* ciano pastello */
+.chapter--decorazioni { background: #eeb4d1; } /* magenta pastello */
+.chapter--strutture   { background: #ffe89e; } /* giallo pastello */
 .chapter--gadget      { background: var(--ink); color: var(--white); }
 .chapter__title {
   grid-column: 1;
@@ -576,12 +897,15 @@ body.nav-hidden .logo {
   grid-row: 2;
   position: relative;
   overflow: hidden;
+  /* stacco a sinistra e sotto = stesso spazio menu aperto <-> scritte */
+  margin-left: var(--pad-sub);
+  margin-bottom: var(--pad-sub);
 }
-/* fallback = colore NEGATIVO rispetto al colore della card */
-.chapter--stampa      .chapter__media { background: #ed4f36; } /* neg. ciano */
-.chapter--decorazioni .chapter__media { background: #1aff81; } /* neg. magenta */
-.chapter--strutture   .chapter__media { background: #002bff; } /* neg. giallo */
-.chapter--gadget      .chapter__media { background: #efefef; } /* neg. nero */
+/* fallback del liquido, pastello */
+.chapter--stampa      .chapter__media { background: #ffd6c9; }
+.chapter--decorazioni .chapter__media { background: #d2f4e3; }
+.chapter--strutture   .chapter__media { background: #ccd3f9; }
+.chapter--gadget      .chapter__media { background: #f0f0f0; }
 .chapter__canvas {
   position: absolute;
   inset: 0;

@@ -1,0 +1,10 @@
+{
+  "title": "Buste commerciali",
+  "order": 2,
+  "categoria": "stampa",
+  "settori": ["aziende", "pa"],
+  "formato": "orizzontale",
+  "hue": 190,
+  "descrizione": "Buste personalizzate con il tuo logo per una corrispondenza sempre coerente.",
+  "images": []
+}

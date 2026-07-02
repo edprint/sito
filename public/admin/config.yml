@@ -1,0 +1,104 @@
+# ============================================================
+# EDPRINT — configurazione CMS (Sveltia, compatibile Decap)
+# I contenuti sono salvati come file JSON nel repo GitHub.
+# ============================================================
+
+backend:
+  name: github
+  repo: ermastuff/edprint          # <-- il tuo repo
+  branch: main
+  # Origine che ospita la funzione OAuth (le API su Vercel di questo stesso sito).
+  # SOSTITUISCI con il dominio Vercel del sito, es. https://edprint.vercel.app
+  base_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
+  auth_endpoint: api/auth
+
+# Messaggio di commit quando il cliente salva
+site_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
+display_url: https://REPLACE-CON-IL-TUO-DOMINIO.vercel.app
+
+# Dove finiscono le immagini caricate dal cliente
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Lingua del pannello
+locale: it
+
+collections:
+  - name: products
+    label: Prodotti (galleria Stampa)
+    label_singular: Prodotto
+    description: >
+      Ogni prodotto è un riquadro-galleria nella pagina Stampa.
+      Trascina le immagini nell'ordine in cui vuoi mostrarle.
+    folder: content/products
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: title
+    slug: "{{fields.order}}-{{slug}}"
+    sortable_fields: [order, title]
+    summary: "{{fields.order}} · {{title}}"
+    fields:
+      - { name: title, label: Nome prodotto, widget: string }
+      - {
+          name: order,
+          label: Ordine (in che posizione appare),
+          widget: number,
+          value_type: int,
+          default: 99,
+        }
+      - name: categoria
+        label: Categoria di servizio (in quale pagina appare)
+        widget: select
+        default: stampa
+        options:
+          - { label: Stampa, value: stampa }
+          - { label: Decorazioni ed allestimenti, value: decorazioni }
+          - { label: Strutture espositive, value: strutture }
+          - { label: Gadget e merchandising, value: gadget }
+      - name: settori
+        label: Settori (uno o più tag)
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: "Aziende, PMI", value: aziende }
+          - { label: "PA, Scuole, Associazioni", value: pa }
+          - { label: "Horeca, Negozi, Attività locali", value: horeca }
+          - { label: "Studi professionali, specialistici", value: studi }
+      - {
+          name: descrizione,
+          label: Breve descrizione (si rivela passando il mouse sul nome),
+          widget: text,
+        }
+      - name: formato
+        label: Formato del riquadro
+        widget: select
+        default: verticale
+        options:
+          - { label: Verticale, value: verticale }
+          - { label: Orizzontale, value: orizzontale }
+          - { label: Quadrato, value: quadrato }
+          - { label: Panoramico, value: panoramico }
+      - {
+          name: hue,
+          label: "Tinta segnaposto (0–360, usata solo se non ci sono immagini)",
+          widget: number,
+          value_type: int,
+          default: 12,
+          required: false,
+        }
+      - name: images
+        label: Immagini
+        label_singular: Immagine
+        widget: list
+        summary: "{{fields.alt}}"
+        fields:
+          - { name: src, label: File immagine, widget: image }
+          - {
+              name: alt,
+              label: Descrizione (per accessibilità/SEO),
+              widget: string,
+              required: false,
+            }

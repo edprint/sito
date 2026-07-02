@@ -3,22 +3,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/** Avvolge ogni lettera in <span class="char">, lasciando gli spazi per l'a-capo. */
+/**
+ * Avvolge ogni parola in <span class="word"> e ogni lettera in <span class="char">.
+ * L'a-capo può avvenire solo tra le parole (agli spazi), mai dentro una parola.
+ */
 function splitChars(el: HTMLElement): HTMLElement[] {
-  const text = el.textContent ?? "";
+  const words = (el.textContent ?? "").split(" ");
   const frag = document.createDocumentFragment();
   const chars: HTMLElement[] = [];
-  for (const ch of text) {
-    if (ch === " ") {
-      frag.appendChild(document.createTextNode(" "));
-    } else {
+  words.forEach((word, wi) => {
+    const wordSpan = document.createElement("span");
+    wordSpan.className = "word";
+    for (const ch of word) {
       const span = document.createElement("span");
       span.className = "char";
       span.textContent = ch;
-      frag.appendChild(span);
+      wordSpan.appendChild(span);
       chars.push(span);
     }
-  }
+    frag.appendChild(wordSpan);
+    if (wi < words.length - 1) frag.appendChild(document.createTextNode(" "));
+  });
   el.textContent = "";
   el.appendChild(frag);
   return chars;

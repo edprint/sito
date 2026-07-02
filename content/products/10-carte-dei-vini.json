@@ -1,0 +1,10 @@
+{
+  "title": "Carte dei vini",
+  "order": 10,
+  "categoria": "stampa",
+  "settori": ["horeca"],
+  "formato": "orizzontale",
+  "hue": 350,
+  "descrizione": "Carte dei vini rilegate e personalizzate per raccontare la tua selezione.",
+  "images": []
+}

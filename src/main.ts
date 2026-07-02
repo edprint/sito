@@ -18,24 +18,24 @@ initBlobField({
   reduceMotion,
   canvas: "#liquid-stampa",
   media: ".chapter--stampa .chapter__media",
-  colors: [0xff7a5e, 0xed4f36, 0xff9a80, 0xffd9cc, 0xf26a4d, 0xd63a20], // neg. ciano
+  colors: [0xffc4b0, 0xffad97, 0xffd6c9, 0xffe8de, 0xffb6a0, 0xf7a086], // corallo pastello
 });
 initBlobField({
   reduceMotion,
   canvas: "#liquid-decorazioni",
   media: ".chapter--decorazioni .chapter__media",
-  colors: [0x5cf0a2, 0x1aff81, 0x86f5bd, 0xd6ffe8, 0x30e07f, 0x12cc66], // neg. magenta
+  colors: [0xbcf0d5, 0x9ee7bf, 0xd2f4e3, 0xe9fbf1, 0xaaecc8, 0x8ce0b3], // menta pastello
 });
 initBlobField({
   reduceMotion,
   canvas: "#liquid-strutture",
   media: ".chapter--strutture .chapter__media",
-  colors: [0x5c78ff, 0x2b4dff, 0x8aa0ff, 0xcdd6ff, 0x3a5cff, 0x1f3ce0], // neg. giallo
+  colors: [0xb9c2f6, 0x9fabf1, 0xcdd3f9, 0xe3e7fc, 0xabb5f4, 0x909dec], // pervinca pastello
 });
 initBlobField({
   reduceMotion,
   canvas: "#liquid-gadget",
   media: ".chapter--gadget .chapter__media",
-  colors: [0xffffff, 0xe4e4e4, 0xf4f4f4, 0xfafafa, 0xececec, 0xdadada], // neg. nero
+  colors: [0xffffff, 0xededed, 0xf6f6f6, 0xfbfbfb, 0xf1f1f1, 0xe6e6e6], // chiaro pastello
 });
 initAnimations({ reduceMotion });

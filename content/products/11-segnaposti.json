@@ -1,0 +1,10 @@
+{
+  "title": "Segnaposti",
+  "order": 11,
+  "categoria": "stampa",
+  "settori": ["horeca", "aziende"],
+  "formato": "quadrato",
+  "hue": 170,
+  "descrizione": "Segnaposti coordinati per eventi, cerimonie e sale ricevimenti.",
+  "images": []
+}

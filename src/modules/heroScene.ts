@@ -109,10 +109,25 @@ const fragmentShader = /* glsl */ `
   }
 `;
 
-export function initHeroScene({ reduceMotion }: { reduceMotion: boolean }): void {
-  const canvas = document.querySelector<HTMLCanvasElement>("#hero-canvas");
-  const media = document.querySelector<HTMLElement>(".hero__media");
+interface HeroSceneOptions {
+  reduceMotion: boolean;
+  /** selettore canvas (default: hero home) */
+  canvas?: string;
+  /** selettore contenitore che dà le dimensioni (default: hero home) */
+  media?: string;
+  /** 6 colori [A,B,C,D(base),E,F]; default = palette hero home */
+  colors?: [number, number, number, number, number, number];
+}
+
+export function initHeroScene(opts: HeroSceneOptions): void {
+  const { reduceMotion } = opts;
+  const canvas = document.querySelector<HTMLCanvasElement>(
+    opts.canvas ?? "#hero-canvas"
+  );
+  const media = document.querySelector<HTMLElement>(opts.media ?? ".hero__media");
   if (!canvas || !media) return;
+
+  const c = opts.colors ?? [0xff5b2e, 0xcdabfe, 0x8fae94, 0xf1e8de, 0xffd21e, 0x2ec5ff];
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -125,12 +140,12 @@ export function initHeroScene({ reduceMotion }: { reduceMotion: boolean }): void
     uResolution: { value: new THREE.Vector2(1, 1) },
     uMouse: { value: new THREE.Vector2(0, 0) },
     uStrength: { value: 0 },
-    uColorA: { value: new THREE.Color(0xff5b2e) },
-    uColorB: { value: new THREE.Color(0xcdabfe) },
-    uColorC: { value: new THREE.Color(0x8fae94) },
-    uColorD: { value: new THREE.Color(0xf1e8de) },
-    uColorE: { value: new THREE.Color(0xffd21e) }, // giallo
-    uColorF: { value: new THREE.Color(0x2ec5ff) }, // ciano
+    uColorA: { value: new THREE.Color(c[0]) },
+    uColorB: { value: new THREE.Color(c[1]) },
+    uColorC: { value: new THREE.Color(c[2]) },
+    uColorD: { value: new THREE.Color(c[3]) },
+    uColorE: { value: new THREE.Color(c[4]) },
+    uColorF: { value: new THREE.Color(c[5]) },
   };
 
   const material = new THREE.ShaderMaterial({
