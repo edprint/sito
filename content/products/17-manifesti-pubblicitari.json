@@ -1,0 +1,11 @@
+{
+  "title": "Manifesti pubblicitari",
+  "order": 1,
+  "categoria": "stampa",
+  "sottocategoria": "manifesti-poster-striscioni",
+  "settori": ["aziende","horeca","pa"],
+  "formato": "verticale",
+  "hue": 25,
+  "descrizione": "Manifesti e poster di grande formato per vetrine, eventi e affissioni.",
+  "images": []
+}

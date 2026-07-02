@@ -1,0 +1,11 @@
+{
+  "title": "Brochure pieghevoli",
+  "order": 1,
+  "categoria": "stampa",
+  "sottocategoria": "brochure-cataloghi-libri",
+  "settori": ["aziende","studi"],
+  "formato": "verticale",
+  "hue": 280,
+  "descrizione": "Brochure e depliant pieghevoli per presentare prodotti e servizi con cura.",
+  "images": []
+}

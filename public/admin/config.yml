@@ -56,6 +56,17 @@ collections:
           - { label: Decorazioni ed allestimenti, value: decorazioni }
           - { label: Strutture espositive, value: strutture }
           - { label: Gadget e merchandising, value: gadget }
+      - name: sottocategoria
+        label: Sottocategoria (in quale sezione della pagina appare)
+        widget: select
+        default: stampati-commerciali
+        options:
+          - { label: "1.1 Stampati commerciali", value: stampati-commerciali }
+          - { label: "1.2 Brochure, cataloghi, libri", value: brochure-cataloghi-libri }
+          - { label: "1.3 Stampe promozionali", value: stampe-promozionali }
+          - { label: "1.4 Packaging, etichette, sticker", value: packaging-etichette-sticker }
+          - { label: "1.5 Manifesti, poster, striscioni", value: manifesti-poster-striscioni }
+          - { label: "1.6 Adesivi e materiali rigidi", value: adesivi-materiali-rigidi }
       - name: settori
         label: Settori (uno o più tag)
         widget: select

@@ -1,0 +1,11 @@
+{
+  "title": "Volantini pubblicitari",
+  "order": 1,
+  "categoria": "stampa",
+  "sottocategoria": "stampe-promozionali",
+  "settori": ["aziende","horeca"],
+  "formato": "verticale",
+  "hue": 340,
+  "descrizione": "Volantini e flyer promozionali per lanci, offerte ed eventi.",
+  "images": []
+}

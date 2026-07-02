@@ -33,3 +33,12 @@ export function lockScroll(locked: boolean): void {
   if (locked) lenis.stop();
   else lenis.start();
 }
+
+/** Scrolla in modo fluido a un elemento (usato dal menu TOC delle pagine servizio). */
+export function scrollToTarget(target: HTMLElement, offset = 0): void {
+  if (lenis) {
+    lenis.scrollTo(target, { offset });
+  } else {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}

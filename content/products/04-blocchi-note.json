@@ -2,6 +2,7 @@
   "title": "Blocchi note",
   "order": 4,
   "categoria": "stampa",
+  "sottocategoria": "stampati-commerciali",
   "settori": ["aziende", "pa"],
   "formato": "panoramico",
   "hue": 265,

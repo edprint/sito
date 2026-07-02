@@ -78,6 +78,10 @@
     </ul>
   </aside>
 
+  <!-- menu indice: appare quando la prima sottosezione è a schermo pieno,
+       popolato da src/modules/stampaSections.ts -->
+  <nav class="toc" data-toc aria-label="Indice sezioni Stampa"></nav>
+
   <main id="top">
 
     <!-- ===================== HERO PAGINA STAMPA ===================== -->
@@ -95,51 +99,11 @@
       </div>
     </section>
 
-    <!-- ===================== STAMPATI COMMERCIALI ===================== -->
-    <section class="svc" id="stampati">
-      <div class="svc__aside">
-        <span class="mono svc__tag reveal">Stampa</span>
-      </div>
-      <div class="svc__main">
-        <h2 class="svc__title">Stampati commerciali</h2>
-        <p class="svc__lead reveal">
-          Tutto ciò che rappresenta la tua attività su carta: dalla corrispondenza
-          quotidiana agli strumenti di vendita. Scegliamo carte, finiture e
-          nobilitazioni per stampati coerenti con la tua immagine — tirature
-          flessibili, colori fedeli, tempi rapidi.
-        </p>
-
-        <div class="svc__block">
-          <h3 class="mono svc__h reveal">Prodotti</h3>
-          <ul class="svc__prods">
-            <li><span class="n">01</span> Biglietti da visita</li>
-            <li><span class="n">02</span> Buste commerciali</li>
-            <li><span class="n">03</span> Carta intestata e fogli lettera</li>
-            <li><span class="n">04</span> Blocchi note</li>
-            <li><span class="n">05</span> Cartelle porta documenti</li>
-            <li><span class="n">06</span> Etichette e stickers</li>
-            <li><span class="n">07</span> Fatture e moduli</li>
-            <li><span class="n">08</span> Porta scontrino</li>
-            <li><span class="n">09</span> Menu e porta menu</li>
-            <li><span class="n">10</span> Carte dei vini</li>
-            <li><span class="n">11</span> Segnaposti</li>
-            <li><span class="n">12</span> Tovagliette personalizzate</li>
-            <li><span class="n">13</span> Cartellini tavolo riservato</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== GALLERIA ===================== -->
-    <section class="gallery" id="galleria">
-      <div class="gallery__head">
-        <span class="mono gallery__tag reveal">Galleria</span>
-        <h2 class="gallery__title reveal">Alcuni lavori usciti dalle nostre macchine.</h2>
-      </div>
-
-      <!-- popolata da src/modules/stampaSections.ts a partire da content/products/*.json -->
-      <div class="gallery__grid" data-gallery-grid></div>
-    </section>
+    <!-- ===================== SOTTOCATEGORIE (testo + galleria) =====================
+         Popolate da src/modules/stampaSections.ts a partire da content/products/*.json,
+         una sezione .subcat per ogni sottocategoria (1.1 Stampati commerciali, 1.2
+         Brochure/cataloghi/libri, ecc). -->
+    <div data-subcats></div>
 
   </main>
 

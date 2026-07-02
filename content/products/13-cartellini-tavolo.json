@@ -2,6 +2,7 @@
   "title": "Cartellini tavolo riservato",
   "order": 13,
   "categoria": "stampa",
+  "sottocategoria": "stampati-commerciali",
   "settori": ["horeca"],
   "formato": "verticale",
   "hue": 20,

@@ -2,6 +2,7 @@
   "title": "Fatture e moduli",
   "order": 7,
   "categoria": "stampa",
+  "sottocategoria": "stampati-commerciali",
   "settori": ["aziende", "studi"],
   "formato": "quadrato",
   "hue": 205,

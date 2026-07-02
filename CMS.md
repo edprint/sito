@@ -56,6 +56,7 @@ Fatto questo, dal pannello farà *Login with GitHub* e potrà gestire tutto.
   "title": "Biglietti da visita",
   "order": 1,
   "categoria": "stampa",
+  "sottocategoria": "stampati-commerciali",
   "settori": ["aziende", "studi"],
   "formato": "verticale",
   "hue": 12,
@@ -66,9 +67,15 @@ Fatto questo, dal pannello farà *Login with GitHub* e potrà gestire tutto.
 }
 ```
 
-- `order` — posizione nella galleria (numero).
+- `order` — posizione nella galleria, all'interno della sua sottocategoria (numero).
 - `categoria` — su quale pagina servizio appare: `stampa` | `decorazioni` | `strutture` | `gadget`.
   La pagina Stampa mostra solo i prodotti con `categoria: stampa`.
+- `sottocategoria` — in quale sezione della pagina appare (le 6 sottosezioni con menu
+  a sinistra): `stampati-commerciali` (1.1) | `brochure-cataloghi-libri` (1.2) |
+  `stampe-promozionali` (1.3) | `packaging-etichette-sticker` (1.4) |
+  `manifesti-poster-striscioni` (1.5) | `adesivi-materiali-rigidi` (1.6).
+  Titoli e testo introduttivo di ogni sottosezione sono fissi (definiti nel codice,
+  in `src/modules/stampaSections.ts`), il cliente gestisce solo i prodotti al loro interno.
 - `settori` — uno o più tag settore: `aziende` | `pa` | `horeca` | `studi`.
 - `formato` — `verticale` | `orizzontale` | `quadrato` | `panoramico` (forma del riquadro).
 - `hue` — colore del segnaposto (0–360), usato **solo** finché non ci sono immagini.
