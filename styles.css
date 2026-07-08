@@ -2185,6 +2185,11 @@ html.route-about body { background: var(--axv-bg, #ff5b2e); }
 .subpage .gallery { padding-block: 0 clamp(72px, 12vh, 150px); }
 .subpage .gallery__grid { columns: 1; }
 .subpage .gallery__grid .ga { margin: 0; }
+/* qui le schede si susseguono in colonna: un formato unico (rettangolo
+   orizzontale) le tiene allineate. Vince sui modificatori .ga--wide/--square/
+   --pano per specificità (3 classi contro 2), quindi il campo "formato" del
+   CMS continua a valere SOLO nel masonry della pagina categoria. */
+.subpage .gallery__grid .ga__frame { aspect-ratio: 16 / 10; }
 
 /* tag settore, sotto la descrizione del prodotto */
 .subpage__tags {
