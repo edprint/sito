@@ -5,7 +5,7 @@ espositive**, **Gadget e merchandising**) sono *data-driven*: i prodotti e le
 immagini vivono in `content/products/*.json` e il cliente li modifica da un
 pannello web, senza toccare il codice.
 
-- **Pannello:** `https://edprint.vercel.app/admin`
+- **Pannello:** `https://sito-weld.vercel.app/admin`
 - **CMS:** [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (Git-based, salva su GitHub)
 - **Hosting:** Vercel (deploy automatico ad ogni salvataggio)
 - **Login cliente:** GitHub OAuth
@@ -24,8 +24,8 @@ pannello web, senza toccare il codice.
 ### 1. Crea una GitHub OAuth App
 GitHub → *Settings* → *Developer settings* → *OAuth Apps* → **New OAuth App**
 - **Application name:** EDPRINT CMS
-- **Homepage URL:** `https://edprint.vercel.app`
-- **Authorization callback URL:** `https://edprint.vercel.app/api/callback`
+- **Homepage URL:** `https://sito-weld.vercel.app`
+- **Authorization callback URL:** `https://sito-weld.vercel.app/api/callback`
 
 Prendi nota di **Client ID** e genera un **Client Secret**.
 
@@ -37,7 +37,7 @@ Progetto su Vercel → *Settings* → *Environment Variables*:
 Poi fai un **Redeploy** perché le variabili vengano lette dalle funzioni `api/`.
 
 ### 3. Aggiorna `public/admin/config.yml`
-Già impostato su `https://edprint.vercel.app` (`base_url`, `site_url`, `display_url`).
+Già impostato su `https://sito-weld.vercel.app` (`base_url`, `site_url`, `display_url`).
 Se in futuro cambi dominio, aggiorna qui e nella OAuth App (passo 1), poi ridistribuisci.
 
 ### 4. Dai accesso al cliente

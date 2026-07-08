@@ -8,12 +8,12 @@ backend:
   repo: edprint/sito               # repo ufficiale
   branch: main
   # Origine che ospita la funzione OAuth (le API su Vercel di questo stesso sito).
-  base_url: https://edprint.vercel.app
+  base_url: https://sito-weld.vercel.app
   auth_endpoint: api/auth
 
 # Messaggio di commit quando il cliente salva
-site_url: https://edprint.vercel.app
-display_url: https://edprint.vercel.app
+site_url: https://sito-weld.vercel.app
+display_url: https://sito-weld.vercel.app
 
 # Dove finiscono le immagini caricate dal cliente
 media_folder: "public/uploads"
