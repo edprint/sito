@@ -24,9 +24,9 @@ import { useCatalogAnimations } from "./useCatalogAnimations";
 const TEMPO_PREVENTIVO = "48h"; // TODO: confermare il dato con EDPRINT
 
 /**
- * Secondo paragrafo della scheda prodotto, uguale per tutti finché non
- * arrivano i testi definitivi. TODO: spostarlo nel CMS come campo
- * "descrizione2" (content/products/*.json) e leggerlo da lì.
+ * Ripiego del secondo paragrafo della scheda prodotto: si vede solo finché il
+ * campo "Dettagli" (descrizione2) è vuoto nel CMS. Tiene in piedi le due
+ * colonne, e dice a chiaro che è un segnaposto.
  */
 const DESCRIZIONE_PLACEHOLDER =
   "Testo segnaposto — qui vanno i dettagli del prodotto: materiali e finiture " +
@@ -157,11 +157,14 @@ function SubcategoryView({
                 </div>
                 <div className="svc__main">
                   <h2 className="svc__title">{p.title}</h2>
-                  {/* due colonne come nell'intro: la prima dal CMS, la seconda
-                      ancora da scrivere (vedi DESCRIZIONE_PLACEHOLDER) */}
+                  {/* due colonne, entrambe dal CMS: "Breve descrizione" e
+                      "Dettagli". Finché i Dettagli sono vuoti resta il
+                      segnaposto, così la colonna non collassa */}
                   <div className="svc__cols cols">
                     <p className="cols__text reveal">{p.descrizione}</p>
-                    <p className="cols__text reveal">{DESCRIZIONE_PLACEHOLDER}</p>
+                    <p className="cols__text reveal">
+                      {p.descrizione2?.trim() || DESCRIZIONE_PLACEHOLDER}
+                    </p>
                   </div>
                   {tags.length > 0 && (
                     <ul className="subpage__tags reveal">

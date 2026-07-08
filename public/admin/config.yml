@@ -5,7 +5,7 @@
 
 backend:
   name: github
-  repo: ermastuff/edprint          # <-- il tuo repo
+  repo: edprint/sito               # repo ufficiale
   branch: main
   # Origine che ospita la funzione OAuth (le API su Vercel di questo stesso sito).
   base_url: https://edprint.vercel.app
@@ -95,11 +95,22 @@ collections:
           - { label: "PA, Scuole, Associazioni", value: pa }
           - { label: "Horeca, Negozi, Attività locali", value: horeca }
           - { label: "Studi professionali, specialistici", value: studi }
-      - {
-          name: descrizione,
-          label: Breve descrizione (si rivela passando il mouse sul nome),
-          widget: text,
-        }
+      - name: descrizione
+        label: Breve descrizione
+        hint: >
+          Una o due righe. Si rivela passando il mouse sul nome, nella galleria
+          della pagina categoria; nella scheda prodotto è il paragrafo di
+          sinistra.
+        widget: text
+      - name: descrizione2
+        label: Dettagli (secondo paragrafo della scheda)
+        hint: >
+          Il paragrafo di destra della scheda prodotto: materiali e finiture,
+          formati, tirature minime, tempi di consegna. Due o tre righe, così da
+          bilanciare la colonna a fianco. Se lo lasci vuoto, resta un testo
+          segnaposto ben visibile.
+        widget: text
+        required: false
       - name: formato
         label: Formato del riquadro
         widget: select

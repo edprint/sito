@@ -41,10 +41,9 @@ Già impostato su `https://edprint.vercel.app` (`base_url`, `site_url`, `display
 Se in futuro cambi dominio, aggiorna qui e nella OAuth App (passo 1), poi ridistribuisci.
 
 ### 4. Dai accesso al cliente
-Il cliente deve poter scrivere sul repo:
-- crea/usa un account GitHub per lui e aggiungilo come **collaborator** del repo
-  `ermastuff/edprint` (GitHub → repo → *Settings* → *Collaborators*), **oppure**
-- mettilo in un team con permesso *Write* se il repo è di un'organizzazione.
+Il cliente deve poter scrivere sul repo `edprint/sito`:
+- aggiungilo come **collaborator** (GitHub → repo → *Settings* → *Collaborators*), **oppure**
+- mettilo in un team con permesso *Write* (il repo è di un'organizzazione).
 
 Fatto questo, dal pannello farà *Login with GitHub* e potrà gestire tutto.
 
@@ -62,6 +61,7 @@ Fatto questo, dal pannello farà *Login with GitHub* e potrà gestire tutto.
   "formato": "verticale",
   "hue": 12,
   "descrizione": "Il biglietto da visita della tua attività: carte pregiate e finiture su misura.",
+  "descrizione2": "Carte da 300 a 600 g, plastificazione soft touch, verniciatura UV a registro.",
   "images": [
     { "src": "/uploads/biglietti-1.jpg", "alt": "Biglietti fronte" }
   ]
@@ -98,7 +98,11 @@ Lo stesso vale per ogni sottocategoria di ogni categoria (`/decorazioni`,
 - `settori` — uno o più tag settore: `aziende` | `pa` | `horeca` | `studi`.
 - `formato` — `verticale` | `orizzontale` | `quadrato` | `panoramico` (forma del riquadro).
 - `hue` — colore del segnaposto (0–360), usato **solo** finché non ci sono immagini.
-- `descrizione` — testo breve rivelato in accordion passando il mouse sul nome del prodotto.
+- `descrizione` — testo breve. Nella pagina categoria si rivela in accordion passando
+  il mouse sul nome; nella scheda prodotto è il **paragrafo di sinistra**.
+- `descrizione2` — il **paragrafo di destra** della scheda prodotto (materiali, formati,
+  tirature, tempi). Facoltativo: se vuoto compare un testo segnaposto ben riconoscibile,
+  così le due colonne non collassano.
 - `images` — elenco immagini del carosello (il primo è quello mostrato per primo).
 
 > **Aggiungere un prodotto da zero:** nel pannello, collezione *Prodotti* → **New Prodotto**,

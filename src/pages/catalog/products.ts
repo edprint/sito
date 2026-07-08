@@ -22,6 +22,8 @@ export interface Product {
   formato?: "verticale" | "orizzontale" | "quadrato" | "panoramico";
   hue?: number;
   descrizione?: string;
+  /** secondo paragrafo della scheda prodotto (colonna di destra) */
+  descrizione2?: string;
   images?: GalleryImage[];
 }
 
