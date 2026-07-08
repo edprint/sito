@@ -1,8 +1,9 @@
 # Gestione contenuti (CMS) — pannello per il cliente
 
-La galleria della pagina **Stampa** è ora *data-driven*: i prodotti e le immagini
-vivono in `content/products/*.json` e il cliente li modifica da un pannello web,
-senza toccare il codice.
+Le pagine servizio (**Stampa**, **Decorazioni ed allestimenti**, **Strutture
+espositive**, **Gadget e merchandising**) sono *data-driven*: i prodotti e le
+immagini vivono in `content/products/*.json` e il cliente li modifica da un
+pannello web, senza toccare il codice.
 
 - **Pannello:** `https://edprint.vercel.app/admin`
 - **CMS:** [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (Git-based, salva su GitHub)
@@ -69,13 +70,31 @@ Fatto questo, dal pannello farà *Login with GitHub* e potrà gestire tutto.
 
 - `order` — posizione nella galleria, all'interno della sua sottocategoria (numero).
 - `categoria` — su quale pagina servizio appare: `stampa` | `decorazioni` | `strutture` | `gadget`.
-  La pagina Stampa mostra solo i prodotti con `categoria: stampa`.
-- `sottocategoria` — in quale sezione della pagina appare (le 6 sottosezioni con menu
-  a sinistra): `stampati-commerciali` (1.1) | `brochure-cataloghi-libri` (1.2) |
-  `stampe-promozionali` (1.3) | `packaging-etichette-sticker` (1.4) |
-  `manifesti-poster-striscioni` (1.5) | `adesivi-materiali-rigidi` (1.6).
-  Titoli e testo introduttivo di ogni sottosezione sono fissi (definiti nel codice,
-  in `src/modules/stampaSections.ts`), il cliente gestisce solo i prodotti al loro interno.
+- `sottocategoria` — in quale sezione della pagina appare. **È il campo che comanda:**
+  se la sottocategoria scelta appartiene a un'altra categoria, vince lei (il prodotto
+  finisce lì). `categoria` serve solo da ripiego se la sottocategoria manca.
+  Titoli e testo introduttivo di categorie e sottocategorie sono fissi (definiti nel
+  codice, in `src/pages/catalog/taxonomy.ts`), il cliente gestisce solo i prodotti.
+
+| Categoria | Sottocategorie |
+|---|---|
+| `stampa` (01) | `stampati-commerciali` (1.1) · `brochure-cataloghi-libri` (1.2) · `stampe-promozionali` (1.3) · `packaging-etichette-sticker` (1.4) · `manifesti-poster-striscioni` (1.5) · `adesivi-materiali-rigidi` (1.6) |
+| `decorazioni` (02) | `decorazione-vetrine` (2.1) · `decorazione-automezzi` (2.2) · `interior-design` (2.3) · `insegne-totem` (2.4) |
+| `strutture` (03) | `fondali-rollup-totem` (3.1) · `desk-postazioni` (3.2) · `punto-vendita-showroom` (3.3) |
+| `gadget` (04) | `gadget-eventi-fiere` (4.1) · `kit-personalizzati` (4.2) · `premiazioni` (4.3) |
+
+### Dove finisce un prodotto
+
+Salvando un prodotto con `sottocategoria: stampati-commerciali`, questo compare
+**in due pagine**, senza altro lavoro:
+
+1. `/stampa` — nella sezione *1.1 Stampati commerciali*: il **nome** nell'elenco
+   "Prodotti" e il suo **riquadro-galleria** nella galleria della sezione.
+2. `/stampa/stampati-commerciali` — una **sezione dedicata**: titolo, descrizione,
+   tag settore, galleria e bottone "Richiedi un preventivo".
+
+Lo stesso vale per ogni sottocategoria di ogni categoria (`/decorazioni`,
+`/decorazioni/insegne-totem`, e così via).
 - `settori` — uno o più tag settore: `aziende` | `pa` | `horeca` | `studi`.
 - `formato` — `verticale` | `orizzontale` | `quadrato` | `panoramico` (forma del riquadro).
 - `hue` — colore del segnaposto (0–360), usato **solo** finché non ci sono immagini.

@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    { "source": "/stampa.html", "destination": "/stampa", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/|admin|uploads/|content/|assets/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

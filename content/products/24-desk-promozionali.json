@@ -1,0 +1,11 @@
+{
+  "title": "Desk promozionali",
+  "order": 24,
+  "categoria": "strutture",
+  "sottocategoria": "desk-postazioni",
+  "settori": ["aziende", "horeca"],
+  "formato": "orizzontale",
+  "hue": 210,
+  "descrizione": "Banchi reception e postazioni informative con grafica intercambiabile.",
+  "images": []
+}

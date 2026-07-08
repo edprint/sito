@@ -1,0 +1,11 @@
+{
+  "title": "Welcome kit aziendali",
+  "order": 27,
+  "categoria": "gadget",
+  "sottocategoria": "kit-personalizzati",
+  "settori": ["aziende", "studi"],
+  "formato": "orizzontale",
+  "hue": 40,
+  "descrizione": "Oggetti, stampati e packaging pensati insieme e consegnati come un unico kit.",
+  "images": []
+}

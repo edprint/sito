@@ -24,10 +24,15 @@ locale: it
 
 collections:
   - name: products
-    label: Prodotti (galleria Stampa)
+    label: Prodotti (tutte le pagine servizio)
     label_singular: Prodotto
     description: >
-      Ogni prodotto è un riquadro-galleria nella pagina Stampa.
+      Un prodotto compare in due posti, scelti dalla sua Sottocategoria:
+      nella pagina della categoria (nome nell'elenco + riquadro in galleria)
+      e nella pagina della sottocategoria (scheda con descrizione, galleria e
+      bottone preventivo). ATTENZIONE: la Sottocategoria deve appartenere alla
+      Categoria scelta — il numero davanti all'etichetta lo dice (1.x = Stampa,
+      2.x = Decorazioni, 3.x = Strutture, 4.x = Gadget).
       Trascina le immagini nell'ordine in cui vuoi mostrarle.
     folder: content/products
     create: true
@@ -58,6 +63,9 @@ collections:
           - { label: Gadget e merchandising, value: gadget }
       - name: sottocategoria
         label: Sottocategoria (in quale sezione della pagina appare)
+        hint: >
+          Sceglila coerente con la Categoria (1.x Stampa, 2.x Decorazioni,
+          3.x Strutture, 4.x Gadget): in caso di conflitto vince questa.
         widget: select
         default: stampati-commerciali
         options:
@@ -67,6 +75,16 @@ collections:
           - { label: "1.4 Packaging, etichette, sticker", value: packaging-etichette-sticker }
           - { label: "1.5 Manifesti, poster, striscioni", value: manifesti-poster-striscioni }
           - { label: "1.6 Adesivi e materiali rigidi", value: adesivi-materiali-rigidi }
+          - { label: "2.1 Decorazione vetrine", value: decorazione-vetrine }
+          - { label: "2.2 Decorazione automezzi", value: decorazione-automezzi }
+          - { label: "2.3 Interior design", value: interior-design }
+          - { label: "2.4 Insegne e totem", value: insegne-totem }
+          - { label: "3.1 Fondali, rollup, totem", value: fondali-rollup-totem }
+          - { label: "3.2 Desk e postazioni", value: desk-postazioni }
+          - { label: "3.3 Strutture per punto vendita e showroom", value: punto-vendita-showroom }
+          - { label: "4.1 Gadget per eventi e fiere", value: gadget-eventi-fiere }
+          - { label: "4.2 Kit personalizzati", value: kit-personalizzati }
+          - { label: "4.3 Premiazioni", value: premiazioni }
       - name: settori
         label: Settori (uno o più tag)
         widget: select
