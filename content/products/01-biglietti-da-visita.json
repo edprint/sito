@@ -3,9 +3,18 @@
   "order": 1,
   "categoria": "stampa",
   "sottocategoria": "stampati-commerciali",
-  "settori": ["aziende", "studi"],
+  "settori": [
+    "aziende",
+    "studi"
+  ],
+  "descrizione": "Il biglietto da visita della tua attività: carte pregiate e finiture su misura.",
+  "descrizione2": "Pollo",
   "formato": "verticale",
   "hue": 12,
-  "descrizione": "Il biglietto da visita della tua attività: carte pregiate e finiture su misura.",
-  "images": []
+  "images": [
+    {
+      "src": "/uploads/Gadget.jpg",
+      "alt": ""
+    }
+  ]
 }
