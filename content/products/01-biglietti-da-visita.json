@@ -7,14 +7,14 @@
     "aziende",
     "studi"
   ],
-  "descrizione": "Il biglietto da visita della tua attività: carte pregiate e finiture su misura.",
-  "descrizione2": "Formati standard e personalizzati\nFiniture speciali\nCarte patinate, naturali o di pregio\nLamina protettiva\nPossibilità di tagli sagomati",
+  "descrizione": "I biglietti da visita sono uno strumento essenziale per il networking, agevolano la condivisione di contatti professionali in modo rapido ed efficace. \nForniscono un mezzo tangibile per ricordare una persona o un’azienda e possono essere personalizzati per riflettere l’identità e il brand di chi li distribuisce.",
+  "descrizione2": "Ogni azienda, attività o professionista può personalizzare il proprio biglietto da visita, non solo nei contenuti, ma anche nella forma, nella scelta dei materiali e delle lavorazioni aggiuntive.\nGrazie al nostro servizio di stampa biglietti da visita, puoi personalizzare ogni dettaglio del tuo progetto:\n\nFormati personalizzati o standard\nCarte classiche, lavorate o naturali\nStampa a colori o monocromatici (nero) in fronte o fronte e retro\nBiglietti accoppiati con interno colorato, unici e robusti per farsi ricordare\nPlastificazione, angoli arrotondati, lamine a caldo, tagli sagomati",
   "formato": "verticale",
   "hue": 12,
   "images": [
     {
-      "src": "/uploads/Gadget.jpg",
-      "alt": ""
+      "src": "/uploads/BV.jpg",
+      "alt": "Biglietto da visita standard"
     }
   ]
 }
